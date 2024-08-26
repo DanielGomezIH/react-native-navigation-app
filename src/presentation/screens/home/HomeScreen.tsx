@@ -1,9 +1,22 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View } from 'react-native';
+import { PrimaryButton } from '../../components';
+import { globalStyles } from '../../theme';
 
 export const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View style={globalStyles.container}>
+      <PrimaryButton
+        label='Products'
+        onPress={() => navigation.navigate('Products' as never)}
+      />
+
+      <PrimaryButton
+        label='Settings'
+        onPress={() => navigation.navigate('Settings' as never)}
+      />
     </View>
   );
 };
