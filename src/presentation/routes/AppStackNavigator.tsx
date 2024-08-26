@@ -1,4 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
+
 import {
   HomeScreen,
   ProductScreen,
@@ -6,9 +7,16 @@ import {
   SettingsScreen,
 } from '../screens';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  Home: undefined;
+  Products: undefined;
+  Product: { id: number; name: string };
+  Settings: undefined;
+};
 
-export const AppNavigator = () => {
+const Stack = createStackNavigator<RootStackParams>();
+
+export const AppStackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
