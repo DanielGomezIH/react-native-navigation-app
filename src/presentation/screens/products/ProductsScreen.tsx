@@ -1,8 +1,10 @@
-import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { type NavigationProp, useNavigation } from '@react-navigation/native';
+import { type StackParams } from '../../routes/StackNavigator';
+
 import { FlatList } from 'react-native-gesture-handler';
 import { PrimaryButton } from '../../components';
-import { type RootStackParams } from '../../routes/AppStackNavigator';
 import { globalStyles } from '../../theme';
 
 const products = [
@@ -14,7 +16,7 @@ const products = [
 ];
 
 export const ProductsScreen = () => {
-  const navigation = useNavigation<NavigationProp<RootStackParams>>();
+  const navigation = useNavigation<NavigationProp<StackParams>>();
 
   return (
     <View style={globalStyles.container}>

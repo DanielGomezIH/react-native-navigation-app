@@ -1,16 +1,12 @@
 import '../gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet } from 'react-native';
-import { AppDrawerNavigator } from './presentation/routes/AppDrawerNavigator';
+import { DrawerNavigator } from './presentation/routes';
 
 export const App = () => {
   return (
     <NavigationContainer>
-      {/* <AppStackNavigator /> */}
-      <AppDrawerNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({});
